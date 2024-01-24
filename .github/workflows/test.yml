@@ -6,6 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
       - run: "npm run test"
