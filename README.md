@@ -14,3 +14,7 @@ Slack のメンションがどのようになるか確認するためのリポ�
 `/github unsubscribe kazu697/slack-mention commits:*`
 
 - PR を作成した際に通知をするようにする
+
+- コメントの通知はデフォルトで通知してくれないのでコメントされたら通知されるように設定する
+
+`/github subscribe kazu697/slack-mention comments`
