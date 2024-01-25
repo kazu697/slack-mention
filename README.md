@@ -18,3 +18,7 @@ Slack のメンションがどのようになるか確認するためのリポ�
 - コメントの通知はデフォルトで通知してくれないのでコメントされたら通知されるように設定する
 
 `/github subscribe kazu697/slack-mention comments`
+
+## Status チェックの場合
+
+- status check の時にどのように通知されるか確認する
