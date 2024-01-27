@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.likeButton {
+  background-color: rgb(231, 76, 60);
+  color: white;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
