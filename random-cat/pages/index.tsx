@@ -36,14 +36,6 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
 
 export default IndexPage
 
-export const SimpleButton: () => JSX.Element = () => {
-  const [state, setState] = useState(false)
-  const handleClick = () => {
-    setState((prevState) => !prevState)
-  }
-  return <button onClick={handleClick}>{state ? 'ON' : 'OFF'}</button>
-}
-
 // サーバーサイドで実行する処理
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const image = await fetchImage()
