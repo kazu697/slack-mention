@@ -7,6 +7,9 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "5",
+    "@testing-library/react": "14",
+    "@testing-library/user-event": "14",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -15,6 +18,11 @@
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "eslint": "^8",
+    "eslint-config-airbnb-base": "^15",
+    "eslint-config-airbnb-typescript": "^17",
+    "eslint-plugin-import": "^2",
+    "prettier": "^2\n",
     "typescript": "^4.8.3"
   }
 }

@@ -1,14 +1,14 @@
-import { NextPage, GetServerSideProps } from 'next';
-import { useEffect, useState } from 'react';
-import styles from "./index.module.css";
+import { NextPage, GetServerSideProps } from 'next'
+import { useEffect, useState } from 'react'
+import styles from './index.module.css'
 
 type Props = {
-  initialImageUrl: string;
+  initialImageUrl: string
 }
 
 const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
-  const [imageUrl, setImageUrl] = useState(initialImageUrl);
-  const [loading, setLoading] = useState(true);
+  const [imageUrl, setImageUrl] = useState(initialImageUrl)
+  const [loading, setLoading] = useState(true)
 
   // useEffect(() => {
   //   fetchImage().then((newImage) => {
@@ -18,10 +18,10 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   // }, [])
 
   const handleClick = async () => {
-    setLoading(true);
-    const newImage = await fetchImage();
-    setImageUrl(newImage.url);
-    setLoading(false);
+    setLoading(true)
+    const newImage = await fetchImage()
+    setImageUrl(newImage.url)
+    setLoading(false)
   }
 
   return (
@@ -34,29 +34,37 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   )
 }
 
-export default IndexPage;
+export default IndexPage
+
+export const SimpleButton: () => JSX.Element = () => {
+  const [state, setState] = useState(false)
+  const handleClick = () => {
+    setState((prevState) => !prevState)
+  }
+  return <button onClick={handleClick}>{state ? 'ON' : 'OFF'}</button>
+}
 
 // サーバーサイドで実行する処理
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const image = await fetchImage();
+  const image = await fetchImage()
   return {
     props: {
       initialImageUrl: image.url,
-    }
+    },
   }
 }
 
 type Image = {
-  url: string;
+  url: string
 }
 
 const fetchImage = async (): Promise<Image> => {
-  const res = await fetch('https://api.thecatapi.com/v1/images/search');
-  const images = await res.json();
-  console.log(images);
-  return images[0];
+  const res = await fetch('https://api.thecatapi.com/v1/images/search')
+  const images = await res.json()
+  console.log(images)
+  return images[0]
 }
 
 fetchImage().then((image) => {
-  console.log(image.url);
-});
+  console.log(image.url)
+})
